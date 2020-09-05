@@ -415,6 +415,9 @@ generalizes a sigmoidal probabilistic activation function from 2 to N possible o
 (defgeneric call-with-adjusted-bias (generator proceed)
   (:documentation "Strategies for managing growth of recursive generators."))
 
+;;; Forward reference to avoid warning
+(defgeneric (setf bias) (new-bias obj))
+
 (defmethod call-with-adjusted-bias ((generator custom-generator) proceed)
   (with-obvious-accessors (bias) generator
     (let ((old-bias bias))

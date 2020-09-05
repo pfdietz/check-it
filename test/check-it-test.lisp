@@ -1,5 +1,9 @@
 (in-package :check-it-test)
 
+(defstruct a-struct
+  a-slot
+  another-slot)
+
 (in-root-suite)
 
 (defun run-all-tests ()
@@ -23,7 +27,3 @@
 
 (defun greater-than-5 (num)
   (> (abs num) 5))
-
-(defstruct a-struct
-  a-slot
-  another-slot)
